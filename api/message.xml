@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sbe:messageSchema xmlns:sbe="http://fixprotocol.io/2016/sbe"
+                   package = "model"
+                   id="0"
+                   version="0"
+                   description="simple message"
+                   byteOrder="littleEndian">
+    <types>
+        <composite name="messageHeader" description="Message identifiers and length of message root">
+            <type name="blockLength" primitiveType="uint16"/>
+            <type name="templateId" primitiveType="uint16"/>
+            <type name="schemaId" primitiveType="uint16"/>
+            <type name="version" primitiveType="uint16"/>
+        </composite>
+
+        <composite name="varDataEncoding">
+            <type name="length" primitiveType="uint32" maxValue="1073741824"/>
+            <type name="varData" primitiveType="uint8" length="0"/>
+        </composite>
+    </types>
+
+    <sbe:message name="Message" id="1" semanticType="request" description="Simple message">
+        <field name="msgId" id="2" type="uint64"/>
+        <field name="msgType" id="3" type="uint8"/>
+        <data name="content" type="varDataEncoding" id="4"/>
+    </sbe:message>
+
+</sbe:messageSchema>
