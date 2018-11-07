@@ -1,7 +1,7 @@
 # What is it? 
 
 * minimalistic example of using SBE in Go
-* although these are already provided in SBE docs, this was a good starting example to learn about Go project setup, defining/exporting interfaces and playing  
+* although these are already provided in SBE docs, this was a good starting example to learn about Go project setup, defining/exporting interfaces and playing around with Go in general
 
 # Generating SBE model files 
 
